@@ -1,0 +1,67 @@
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 274px;
+  /* background-color: blanchedalmond; */
+  border-radius: 14px;
+}
+
+.img {
+  width: 274px;
+  height: 268px;
+  border-radius: 14px;
+  object-fit: cover;
+  margin-bottom: 14px;
+}
+
+.mainDesc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.model {
+  display: flex;
+  gap: 3px;
+}
+
+.carName,
+.carYear,
+.carPrice {
+  color: #121417;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.carModel {
+  composes: carName;
+  color: #3470ff;
+}
+
+.params {
+  margin-bottom: 28px;
+  color: rgba(18, 20, 23, 0.5);
+  font-size: 12px;
+  line-height: 1.5;
+  height: 54px;
+}
+
+.btnLearnMore {
+  display: flex;
+  /* min-width: 274px; */
+  height: 44px;
+  padding: 12px 99px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 100%;
+  /* padding: 12px 99px; */
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  border-radius: 12px;
+  background: #3470ff;
+}

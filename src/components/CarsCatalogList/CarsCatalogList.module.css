@@ -1,0 +1,8 @@
+.cardWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px 29px;
+  padding: 20px 50px;
+  background-color: rgba(138, 173, 243, 0.8);
+}
