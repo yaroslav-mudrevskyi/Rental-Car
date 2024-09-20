@@ -1,0 +1,42 @@
+.homePage {
+  position: relative;
+  background-image: url("../../components/image/homeImage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: calc(100vh - 68px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnClick {
+  position: absolute;
+  bottom: 80px;
+  left: 200px;
+  padding: 12px 20px;
+  font-weight: 700;
+  border: 2px solid #a1a1ef;
+  border-radius: 20px;
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  color: rgb(57, 12, 219);
+  transition: all 0.3s ease;
+  animation: sizeChange 2s infinite;
+  &:hover {
+    transform: scale(1.05);
+    color: #f06219;
+  }
+}
+
+@keyframes sizeChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

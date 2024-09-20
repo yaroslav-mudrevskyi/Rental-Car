@@ -1,6 +1,14 @@
+import { useDispatch } from "react-redux";
 import s from "./CarsCatalogCard.module.css";
+import { openModal } from "../../redux/modal/slice";
 
 const CarsCatalogCard = ({ car }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(openModal(car));
+  };
+
   return (
     <div className={s.cardWrapper}>
       <img className={s.img} src={car.img} alt={car.make} />
@@ -20,7 +28,7 @@ const CarsCatalogCard = ({ car }) => {
         {car.rentalCompany} | {car.type} | {car.model} | {car.id} |{" "}
         {car.functionalities[0]}
       </p>
-      <button className={s.btnLearnMore} type="button">
+      <button className={s.btnLearnMore} type="button" onClick={handleClick}>
         Learn more
       </button>
     </div>

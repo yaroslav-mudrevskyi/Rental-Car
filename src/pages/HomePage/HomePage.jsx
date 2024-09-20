@@ -1,5 +1,14 @@
+import { Link } from "react-router-dom";
+import s from "./HomePage.module.css";
+
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <div className={s.homePage}>
+      <Link className={s.btnClick} to="/catalog">
+        Click here to choose best car for you!
+      </Link>
+    </div>
+  );
 };
 
 export default HomePage;
