@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchCars, loadMoreCars } from "./operations";
 import axios from "axios";
+
+import { fetchCars, loadMoreCars } from "./operations";
+import { handleFulfilled, handlePending, handleRejected } from "../handlers";
 
 const initialState = {
   items: [],
@@ -16,33 +18,18 @@ const slice = createSlice({
     builder
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.items = action.payload;
-        state.isLoading = false;
-      })
-      .addCase(fetchCars.pending, (state) => {
-        state.isLoading = true;
-        state.isError = false;
-      })
-      .addCase(fetchCars.rejected, (state, action) => {
-        state.isError = action.payload;
-        state.isLoading = false;
       })
       .addCase(loadMoreCars.fulfilled, (state, action) => {
         state.items.push(...action.payload);
-        state.isLoading = false;
         if (action.payload.length < axios.defaults.params.limit) {
           state.isLastPage = true;
         } else {
           state.isLastPage = false;
         }
       })
-      .addCase(loadMoreCars.pending, (state) => {
-        state.isLoading = true;
-        state.isError = false;
-      })
-      .addCase(loadMoreCars.rejected, (state, action) => {
-        state.isError = action.payload;
-        state.isLoading = false;
-      });
+      .addMatcher(({ type }) => type.endsWith("pending"), handlePending)
+      .addMatcher(({ type }) => type.endsWith("fulfilled"), handleFulfilled)
+      .addMatcher(({ type }) => type.endsWith("rejected"), handleRejected);
   },
 });
 

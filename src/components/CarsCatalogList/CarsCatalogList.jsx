@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCars } from "../../redux/cars/selectors";
 import { fetchCars } from "../../redux/cars/operations";
+
 import CarsCatalogCard from "../CarsCatalogCard/CarsCatalogCard";
+
 import s from "./CarsCatalogList.module.css";
 
 const CarsCatalogList = () => {

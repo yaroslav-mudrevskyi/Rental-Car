@@ -3,6 +3,7 @@ import { IoClose } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedCar, selectIsOpenModal } from "../../redux/modal/selectors";
 import { closeModal } from "../../redux/modal/slice";
+
 import s from "./ModalForDetails.module.css";
 
 Modal.setAppElement("#root");
@@ -22,7 +23,7 @@ const ModalForDetails = () => {
       overlayClassName={s.overlay}
       bodyOpenClassName={s.blockScroll}
     >
-      <div>
+      <div className={s.modalWrapper}>
         <IoClose
           className={s.closeBtn}
           onClick={() => dispatch(closeModal())}

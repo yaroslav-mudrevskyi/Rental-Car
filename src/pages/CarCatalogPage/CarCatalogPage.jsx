@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadMoreCars } from "../../redux/cars/operations";
 import { selectIsLastPage, selectIsLoading } from "../../redux/cars/selectors";
+
 import CarsCatalogList from "../../components/CarsCatalogList/CarsCatalogList";
 import Loader from "../../components/Loader/Loader";
 import ModalForDetails from "../../components/ModalForDetails/ModalForDetails";
+
 import s from "./CarCatalogPage.module.css";
 
 const CarCatalogPage = () => {

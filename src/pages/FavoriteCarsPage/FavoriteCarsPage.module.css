@@ -1,0 +1,26 @@
+.wrapper {
+  position: relative;
+  min-height: calc(100vh - 68px);
+  padding: 50px 128px;
+  background-color: rgba(138, 173, 243, 0.8);
+}
+
+.visitText {
+  width: 40%;
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+  color: rgba(183, 43, 43, 0.6);
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+}
+
+.backImage {
+  background-image: url("../../components/image/backImageForFavorite-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  position: absolute;
+  bottom: 0px;
+  right: -100px;
+  width: 1000px;
+  height: 250px;
+}

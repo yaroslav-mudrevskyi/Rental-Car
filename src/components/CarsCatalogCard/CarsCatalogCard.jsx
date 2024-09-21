@@ -1,9 +1,25 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { openModal } from "../../redux/modal/slice";
+import { selectFavoriteCars } from "../../redux/favorite/selectors";
+import { addToFavorite, deleteFavorite } from "../../redux/favorite/slice";
+
 import s from "./CarsCatalogCard.module.css";
 
 const CarsCatalogCard = ({ car }) => {
   const dispatch = useDispatch();
+
+  const isFavorite = useSelector(selectFavoriteCars).find(
+    (item) => item.id === car.id
+  );
+
+  const handleChooseFavorite = () => {
+    if (isFavorite) {
+      dispatch(deleteFavorite(car));
+    } else {
+      dispatch(addToFavorite(car));
+    }
+  };
 
   const handleClick = () => {
     dispatch(openModal(car));
@@ -11,6 +27,13 @@ const CarsCatalogCard = ({ car }) => {
 
   return (
     <div className={s.cardWrapper}>
+      <div className={s.heartColor}>
+        {isFavorite ? (
+          <FaHeart color="#3470FF" onClick={handleChooseFavorite} />
+        ) : (
+          <FaRegHeart color="#fff" onClick={handleChooseFavorite} />
+        )}
+      </div>
       <img className={s.img} src={car.img} alt={car.make} />
       <div className={s.mainDesc}>
         <div className={s.model}>
