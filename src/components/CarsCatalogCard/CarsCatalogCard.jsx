@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import s from "./CarsCatalogCard.module.css";
 import { openModal } from "../../redux/modal/slice";
+import s from "./CarsCatalogCard.module.css";
 
 const CarsCatalogCard = ({ car }) => {
   const dispatch = useDispatch();
