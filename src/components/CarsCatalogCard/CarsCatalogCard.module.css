@@ -22,10 +22,24 @@
   right: 18px;
   width: 22px;
   height: 22px;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus {
+    fill: #3470ff;
+    transform: scale(1.15);
+  }
 }
 
 .btnHeart {
   background-color: transparent;
+}
+
+.whiteHeart {
+  color: #fff;
+  transition: all 0.2s ease;
+  &:hover {
+    color: #3470ff;
+  }
 }
 
 .img {

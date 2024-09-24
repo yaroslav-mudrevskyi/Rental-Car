@@ -34,7 +34,10 @@ const CarsCatalogCard = ({ car }) => {
           </button>
         ) : (
           <button className={s.btnHeart}>
-            <FaRegHeart color="#fff" onClick={handleChooseFavorite} />
+            <FaRegHeart
+              className={s.whiteHeart}
+              onClick={handleChooseFavorite}
+            />
           </button>
         )}
       </div>
