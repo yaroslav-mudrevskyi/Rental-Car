@@ -5,6 +5,14 @@
   background-color: rgba(138, 173, 243, 0.8);
 }
 
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .visitText {
   width: 40%;
   margin: 0 auto;
@@ -12,6 +20,21 @@
   text-align: center;
   color: rgba(183, 43, 43, 0.6);
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
+}
+
+.backToCatalog {
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #b3f3c2;
+  background-color: #442fe8;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.3s ease;
+  &:hover,
+  &:focus {
+    color: #bfb60bf5;
+    outline: none;
+  }
 }
 
 .backImage {

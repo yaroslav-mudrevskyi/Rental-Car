@@ -7,6 +7,7 @@ import ModalForDetails from "../../components/ModalForDetails/ModalForDetails";
 import Loader from "../../components/Loader/Loader";
 
 import s from "./FavoriteCarsPage.module.css";
+import { Link } from "react-router-dom";
 
 const FavoriteCarsPage = () => {
   const favoriteCars = useSelector(selectFavoriteCars);
@@ -19,11 +20,14 @@ const FavoriteCarsPage = () => {
       {favoriteCars.length ? (
         <FavoriteCarsList />
       ) : (
-        <div>
+        <div className={s.textWrapper}>
           <p className={s.visitText}>
             Please return to the catalog and add any car to your favorites! To
             do this, click on the heart.
           </p>
+          <Link to="/catalog" className={s.backToCatalog}>
+            Back to the catalog!
+          </Link>
           <span className={s.backImage}></span>
         </div>
       )}
