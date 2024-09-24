@@ -29,9 +29,13 @@ const CarsCatalogCard = ({ car }) => {
     <div className={s.cardWrapper}>
       <div className={s.heartColor}>
         {isFavorite ? (
-          <FaHeart color="#3470FF" onClick={handleChooseFavorite} />
+          <button className={s.btnHeart}>
+            <FaHeart color="#3470FF" onClick={handleChooseFavorite} />
+          </button>
         ) : (
-          <FaRegHeart color="#fff" onClick={handleChooseFavorite} />
+          <button className={s.btnHeart}>
+            <FaRegHeart color="#fff" onClick={handleChooseFavorite} />
+          </button>
         )}
       </div>
       <img className={s.img} src={car.img} alt={car.make} />

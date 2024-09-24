@@ -24,6 +24,10 @@
   height: 22px;
 }
 
+.btnHeart {
+  background-color: transparent;
+}
+
 .img {
   width: 274px;
   height: 268px;
