@@ -24,10 +24,12 @@ const ModalForDetails = () => {
       bodyOpenClassName={s.blockScroll}
     >
       <div className={s.modalWrapper}>
-        <IoClose
-          className={s.closeBtn}
-          onClick={() => dispatch(closeModal())}
-        />
+        <button className={s.modalCloseBtn}>
+          <IoClose
+            className={s.closeBtn}
+            onClick={() => dispatch(closeModal())}
+          />
+        </button>
         <img className={s.img} src={openCar.img} alt={openCar.make} />
         <div className={s.wrapper}>
           <div>
